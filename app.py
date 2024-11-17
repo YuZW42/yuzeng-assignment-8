@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
-from logistic_regression_solution import do_experiments
+from sklearn.linear_model import LogisticRegression
+from logistic_regression import do_experiments
 
 app = Flask(__name__)
 
@@ -34,4 +35,4 @@ def results(filename):
     return send_from_directory('results', filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port = 3000)
